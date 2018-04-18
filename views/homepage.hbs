@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+This is Jobster web app.
+
+-->
+<html>
+    <head>
+        <style>
+            body {
+                background-color: lightblue;
+            }
+
+            h1 {
+                background-color: orange;
+                color: white;
+                text-align: center;
+                font-size: 80px;
+                margin: 100px 115ps 100px;
+            }
+
+            p1 {
+                color: white;
+                position: fixed;
+                text-align: center;
+                font-family: verdana;
+                font-size: 40px;
+                margin-top: 100px;
+                left: 0;
+                width: 100%;
+            }
+            p2 {
+                background-color: orange;
+                color: white;
+                position: fixed;
+                text-align: center;
+                font-family: verdana;
+                font-size: 40px;
+                margin-top: 200px;
+                left: 0;
+                width: 100%;
+            }
+            .button {
+                background-color: lightyellow;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 3px 3px;
+                cursor: pointer;
+            }
+            footer {
+                font-size: 12px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                height: 20px;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+        <title>Jobster</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>{{pageTitle}}</h1>
+        <p1>Welcome to Jobster.</p1>
+        </br>
+        <script>
+            function myFunction(id) {
+                if (id == "login") {
+                  var email = document.getElementById('email').value;
+                  var password = document.getElementById('password').value;
+                  location.href = "/login?email="+email+"&password="+password;
+                } else {
+                  location.href = "/register_guide";
+                }
+            }
+        </script>
+        <p2>
+          <form method="post">
+            Email: <input type="text" id="email" name="email"><br>
+            Password: <input type="text" id="password" name="password"><br>
+            <input id="login" type="button" class="button" onclick="myFunction(id)" value="Login">
+            <input id="resgister" type="button" class="button" onclick="myFunction(id)" value="Register">
+          </form>
+        </p2>
+        {{> footer}}
+    </body>
+
+
+</html>

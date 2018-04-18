@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+This is Jobster web app.
+
+-->
+<html>
+    <head>
+        <title>Jobster</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>{{pageTitle}}</h1>
+        <div>Welcome to home page.</div>
+        <script>
+
+        var pathAddr = window.location.href;
+        var pathArray = pathAddr.split("/");
+        alert(pathArray[3]);
+
+        var mysqlL = require('mysql');
+        var con = mysql.createConnection({
+          host: "localhost",
+          user: "root",
+          password: "root",
+          database: "jobster"
+        });
+
+        con.connect(function(err) {
+          alert("connected!");
+          if (err) throw err;
+        });
+        </script>
+        <footer>Copyright {{currentYear}}</footer>
+    </body>
+
+
+</html>
